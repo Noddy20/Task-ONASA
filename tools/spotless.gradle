@@ -1,0 +1,45 @@
+apply plugin: "com.diffplug.gradle.spotless"
+
+/**
+ *
+ *   Visit : https://medium.com/@int_32/android-project-code-style-using-spotless-and-ktlint-5422fd90976c
+ *
+ *   Cmds to check and apply Spotless
+ *   ./gradlew spotlessCheck
+ *   ./gradlew spotlessApply
+ *
+ */
+
+spotless {
+
+    java {
+        target '**/*.java'
+        googleJavaFormat().aosp()
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+
+    kotlin {
+        target '**/*.kt'
+        ktlint()
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+
+    format 'misc', {
+        target '**/*.gradle', '**/*.md', '**/.gitignore'
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    format 'xml', {
+        target '**/*.xml'
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}

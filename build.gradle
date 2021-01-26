@@ -1,0 +1,32 @@
+buildscript {
+
+    // An extra gradle file to manage ext variables
+    apply from: "$project.rootDir/dependencies.gradle"
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$versions.gradleBuildTool"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:$versions.spotlessGradle"                                   // For Code Rules
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$versions.daggerHiltAndroidVersion"                         // Hilt for Dagger
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"                             // For passing bundle safe by navigation arch
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$versions.kotlin"                                              // For Json Parsing
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+        }
+        maven{
+            url 'https://jitpack.io'
+        }
+    }
+}
