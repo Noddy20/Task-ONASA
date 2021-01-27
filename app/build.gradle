@@ -74,6 +74,7 @@ dependencies {
 
     //Views and Layouts
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swiperefreshlayout"
     implementation "com.google.android.material:material:$versions.material"
 
     implementation("me.relex:circleindicator:$versions.vpCircleIndicator"){

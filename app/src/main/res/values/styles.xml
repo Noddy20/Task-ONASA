@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- View Click Style-->
+    <style name="ClickableWithinBorder">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="ClickableBorderLess">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Picture.Corner" parent="">
+        <item name="cornerSize">@dimen/itemPictureRadius</item>
+    </style>
+
+</resources>

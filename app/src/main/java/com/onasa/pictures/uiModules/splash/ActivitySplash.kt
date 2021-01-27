@@ -63,6 +63,7 @@ class ActivitySplash : BaseAppCompatActivity() {
                 transitionSet.onTransitionEnd(lifecycleScope){
                     Timber.d("onTransitionEnd")
                     gotoHomeActivity()
+                    finish()
                 }
                 clAppNames.post {
                     TransitionManager.beginDelayedTransition(actRootView, transitionSet)

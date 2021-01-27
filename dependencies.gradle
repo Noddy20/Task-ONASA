@@ -34,6 +34,7 @@ ext.versions = [
         // View and Layouts
         material                : '1.3.0-rc01',
         constraintLayout        : '2.0.4',
+        swiperefreshlayout      : '1.1.0',
         vpCircleIndicator       : '2.1.4',
         animatedRV              : '2.0.0',
         shimmer                 : '0.5.0',

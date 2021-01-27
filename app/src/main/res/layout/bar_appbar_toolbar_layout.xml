@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="@dimen/dp_zero"
+        android:theme="@style/Widget.MaterialComponents.AppBarLayout.Primary">
+
+        <include
+            android:id="@+id/includeToolbar"
+            layout="@layout/bar_toolbar_layout"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+</layout>

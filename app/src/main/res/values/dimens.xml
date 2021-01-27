@@ -2,5 +2,8 @@
 <resources>
 
     <dimen name="dp_zero">0dp</dimen>
+    <dimen name="screenRootPadding">@dimen/_8sdp</dimen>
+    <dimen name="itemPictureHeightRv">@dimen/_160sdp</dimen>
+    <dimen name="itemPictureRadius">@dimen/_10sdp</dimen>
 
 </resources>

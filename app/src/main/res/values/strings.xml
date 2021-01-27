@@ -3,5 +3,7 @@
     <string name="title_pictures_app">Pictures App</string>
     <string name="msg_you_are_online">You are back online</string>
     <string name="msg_you_are_offline">You are offline</string>
+    <string name="str_empty" />
+    <string name="cont_desc_picture_item">Picture</string>
 
 </resources>

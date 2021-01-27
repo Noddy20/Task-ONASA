@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/navFragHome">
+    <fragment
+        android:id="@+id/navFragHome"
+        android:name="com.onasa.pictures.uiModules.home.main.FragmentHome"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/navActionHelpDeskToWebView"
+            app:destination="@id/navFragPictureDetail"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navFragPictureDetail"
+        android:name="com.onasa.pictures.uiModules.home.details.FragmentPictureDetail"
+        tools:layout="@layout/fragment_picture_detail"
+        android:label="{webTitle}">
+
+        <argument
+            android:name="modelPicture"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="com.onasa.pictures.models.data.ModelPicture" />
+
+    </fragment>
+
+</navigation>

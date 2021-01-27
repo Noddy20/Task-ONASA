@@ -5,6 +5,10 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+import com.onasa.pictures.databinding.BarToolbarLayoutBinding
+import com.onasa.pictures.uiModules.base.BaseAppCompatActivity
 
 fun AppCompatActivity.setFullScreen() {
     window.apply {
@@ -43,4 +47,24 @@ fun AppCompatActivity.exitFullScreen() {
 fun AppCompatActivity.isActivityNotFullScreen(): Boolean {
     @Suppress("DEPRECATION")
     return ((window.decorView.visibility and View.SYSTEM_UI_FLAG_HIDE_NAVIGATION) == 0)
+}
+
+/**
+ *    Toolbar Setup
+ */
+
+fun BaseAppCompatActivity.setupToolbar(toolbarBinding: BarToolbarLayoutBinding, navUpEnabled: Boolean = true, navController: NavController? = null){
+    //Setup as ActionBar
+    setSupportActionBar(toolbarBinding.toolbar)
+    supportActionBar?.apply {
+        if (navUpEnabled) {
+            setDisplayShowHomeEnabled(true) // show or hide the default home button
+            setDisplayHomeAsUpEnabled(true)
+        }
+    }
+
+    //Set NavController if any
+    navController?.let { nav->
+        setupActionBarWithNavController(this, nav)
+    }
 }
