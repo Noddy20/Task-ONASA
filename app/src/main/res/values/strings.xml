@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ONASA</string>
+    <string name="title_pictures_app">Pictures App</string>
+    <string name="msg_you_are_online">You are back online</string>
+    <string name="msg_you_are_offline">You are offline</string>
+
 </resources>

@@ -1,12 +1,28 @@
 package com.onasa.pictures.uiModules.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.onasa.pictures.R
+import com.onasa.pictures.databinding.ActivityHomeBinding
+import com.onasa.pictures.models.sealedModels.SealedNetState
+import com.onasa.pictures.uiModules.base.BaseAppCompatActivity
+import com.onasa.pictures.utils.extFunctions.showNetworkStateSnackBar
+import dagger.hilt.android.AndroidEntryPoint
+import com.onasa.pictures.utils.extFunctions.invoke
 
-class ActivityHome : AppCompatActivity() {
+@AndroidEntryPoint
+class ActivityHome : BaseAppCompatActivity() {
+
+    private val mDataBinding by binding<ActivityHomeBinding>(R.layout.activity_home)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        mDataBinding{
+
+        }
     }
+
+    override fun networkStatChanged(netState: SealedNetState) {
+        showNetworkStateSnackBar(netState, mDataBinding.actRootView)
+    }
+
 }
