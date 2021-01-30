@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/navActionHelpDeskToWebView"
+            android:id="@+id/navActionHomeToDetail"
             app:destination="@id/navFragPictureDetail"/>
 
     </fragment>
@@ -20,13 +20,18 @@
         android:id="@+id/navFragPictureDetail"
         android:name="com.onasa.pictures.uiModules.home.details.FragmentPictureDetail"
         tools:layout="@layout/fragment_picture_detail"
-        android:label="{webTitle}">
+        >
 
         <argument
             android:name="modelPicture"
             android:defaultValue="@null"
             app:nullable="true"
             app:argType="com.onasa.pictures.models.data.ModelPicture" />
+
+        <argument
+            android:name="currPos"
+            android:defaultValue="0"
+            app:argType="integer" />
 
     </fragment>
 

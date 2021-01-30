@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="bModel"
+            type="com.onasa.pictures.models.data.ModelPicture" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBottomsheetTitle"
+            style="@style/AppTheme.ToolbarTitleTextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_bottom_sheet_dialog_primary"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:text="@string/title_pictures_details"
+            android:textColor="@color/colorTextWhite" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvPictureTitle"
+                    bind_htmlText="@{`&lt;b>Title :&lt;/b> ` + bModel.title ?? ``}"
+                    bind_isVisible="@{!TextUtils.isEmpty(bModel.title)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:lineSpacingExtra="@dimen/_2sdp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:textColor="@color/colorTextWhite"
+                    tools:text="@string/app_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvPictureDate"
+                    bind_htmlText="@{`&lt;b>Date :&lt;/b> ` + bModel.date ?? ``}"
+                    bind_isVisible="@{!TextUtils.isEmpty(bModel.date)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:lineSpacingExtra="@dimen/_2sdp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:textColor="@color/colorTextWhite"
+                    tools:text="@string/app_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvPictureCopyright"
+                    bind_htmlText="@{`&lt;b>Copyright :&lt;/b> ` + bModel.copyright ?? ``}"
+                    bind_isVisible="@{!TextUtils.isEmpty(bModel.copyright)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:lineSpacingExtra="@dimen/_2sdp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:textColor="@color/colorTextWhite"
+                    tools:text="@string/app_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvPictureExplanation"
+                    bind_htmlText="@{`&lt;b>Explanation :&lt;/b> ` + bModel.explanation ?? ``}"
+                    bind_isVisible="@{!TextUtils.isEmpty(bModel.explanation)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:lineSpacingExtra="@dimen/_2sdp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:textColor="@color/colorTextWhite"
+                    tools:text="@string/app_name" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

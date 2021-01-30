@@ -77,8 +77,8 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swiperefreshlayout"
     implementation "com.google.android.material:material:$versions.material"
 
-    implementation("me.relex:circleindicator:$versions.vpCircleIndicator"){
-        because("To show dots indicator for ViewPager and ViewPager2")
+    implementation("com.jsibbold:zoomage:$versions.zoomage"){
+        because("For Zoomable ImageView")
     }
     implementation("com.mlsdev.animatedrv:library:$versions.animatedRV"){
         because("For animated Recyclerview")

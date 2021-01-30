@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefreshLayout"
+        >
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingHorizontal="@dimen/screenRootPadding"
             android:paddingTop="@dimen/screenRootPadding">
+            <!-- Data View -->
             <com.mlsdev.animatedrv.AnimatedRecyclerView
                 android:id="@+id/rvHomePictures"
                 android:layout_width="match_parent"
@@ -20,6 +25,14 @@
                 android:paddingBottom="@dimen/screenRootPadding"
                 android:clipToPadding="false"
                 />
+
+            <!-- Error View -->
+            <include
+                android:id="@+id/includeEmptyVew"
+                layout="@layout/content_no_data_found_layout"
+                />
+
+            <!-- Loading View -->
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

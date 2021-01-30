@@ -28,6 +28,9 @@ fun Dispatchers.default() = Default.withExcHandler()
 
 fun Dispatchers.unconfined() = Unconfined.withExcHandler()
 
+val CoroutineContext.IO : CoroutineContext
+    get() = (this + Dispatchers.io())
+
 /**
  *   launch Extension with DefaultCoroutine Exception Handler
  */

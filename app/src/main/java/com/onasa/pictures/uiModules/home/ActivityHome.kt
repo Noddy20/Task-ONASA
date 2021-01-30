@@ -1,6 +1,7 @@
 package com.onasa.pictures.uiModules.home
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.onasa.pictures.R
@@ -16,6 +17,7 @@ import com.onasa.pictures.utils.extFunctions.setupToolbar
 class ActivityHome : BaseAppCompatActivity() {
 
     private val mDataBinding by binding<ActivityHomeBinding>(R.layout.activity_home)
+    private val mViewModel by viewModels<ViewModelHome>()
 
     private lateinit var navController: NavController
 

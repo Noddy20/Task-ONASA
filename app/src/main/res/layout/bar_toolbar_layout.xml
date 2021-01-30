@@ -9,6 +9,7 @@
         app:layout_scrollFlags="scroll|enterAlways"
         android:background="@color/colorPrimary"
         android:elevation="@dimen/dp_zero"
+        style="@style/AppTheme.DarkToolbar"
         app:titleTextColor="@color/colorTextWhite"
         tools:title="@string/app_name"
         />

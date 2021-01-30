@@ -1,9 +1,24 @@
 <resources>
+
+    <!-- App Strings -->
     <string name="app_name">ONASA</string>
+
+    <!-- General Strings -->
+    <string name="str_empty" />
+
+    <!-- Titles -->
     <string name="title_pictures_app">Pictures App</string>
+    <string name="title_details">Details</string>
+    <string name="title_pictures_details">Picture Details</string>
+
+    <!-- Messages -->
+    <string name="msg_no_data_found">No Data Found!</string>
     <string name="msg_you_are_online">You are back online</string>
     <string name="msg_you_are_offline">You are offline</string>
-    <string name="str_empty" />
+    <string name="msg_success">Success</string>
+    <string name="msg_no_data_loading">Loading Data…</string>
+
+    <!-- Content Description -->
     <string name="cont_desc_picture_item">Picture</string>
 
 </resources>

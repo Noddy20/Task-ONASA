@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.onasa.pictures.R" />
+
+        <variable
+            name="bModel"
+            type="com.onasa.pictures.models.data.ModelPicture" />
+    </data>
+
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/ivWallpaper"
+        bind_glidePlaceholder="@{R.drawable.placeholder}"
+        bind_glideUrl="@{bModel.hdUrl ?? ``}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorShimmerBG"
+        android:contentDescription="@string/cont_desc_picture_item"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoCenter="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_maxScale="8"
+        app:zoomage_minScale="0.6"
+        app:zoomage_restrictBounds="false"
+        app:zoomage_translatable="true"
+        app:zoomage_zoomable="true"
+        tools:srcCompat="@drawable/placeholder" />
+</layout>
