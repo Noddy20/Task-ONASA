@@ -15,6 +15,13 @@ apply {
 }
 
 android {
+
+    signingConfigs {
+        debug {
+            storeFile file('../onasa_debug_android.keystore')
+        }
+    }
+
     compileSdkVersion appConf.compileSdk
     buildToolsVersion appConf.buildTools
 
@@ -34,6 +41,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -147,8 +157,20 @@ dependencies {
     // Logging
     implementation "com.jakewharton.timber:timber:$versions.timber"
 
-    // Testing
+    /**
+     *   Testing Dependencies
+     */
+
+    // Unit Testing
     testImplementation "junit:junit:$versions.junit"
+    testImplementation "org.mockito:mockito-core:$versions.mockito"
+    testImplementation "androidx.arch.core:core-testing:$versions.archCoreTesting"
+    testImplementation "androidx.test:core-ktx:$versions.androidXTestCoreVersion"
+    testImplementation "androidx.test.ext:junit-ktx:$versions.androidXTestExtKotlinRunnerVersion"
+    testImplementation "org.robolectric:robolectric:$versions.robolectricVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutinesTest"
+
+    // Instrumentation Testing
     androidTestImplementation "androidx.test.ext:junit:$versions.junitExt"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCore"
 }

@@ -66,6 +66,8 @@ class FragmentPictureDetail : BaseFragment<FragmentPictureDetailBinding>() {
                     vpPictures.currentItem = args.currPos
                 }
             }
+
+            if (mViewModel.isDetailsShowing) showPictureDetails()
         }
     }
 
@@ -76,13 +78,25 @@ class FragmentPictureDetail : BaseFragment<FragmentPictureDetailBinding>() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menuItemInfo){
-            kotlin.runCatching {
-                modelsList?.get(mDataBinding.vpPictures.currentItem)?.let {
-                    mDialogs.showPictureDetailsDialog(it)
-                }
-            }
+            showPictureDetails()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        //Save isShowingBottomSheet status
+        mViewModel.isDetailsShowing = mDialogs.isShowingBottomSheet
+        super.onDestroy()
+    }
+
+    private fun showPictureDetails(){
+        kotlin.runCatching {
+            modelsList?.get(mDataBinding.vpPictures.currentItem)?.let {
+                mDialogs.showPictureDetailsDialog(it)
+                //Save isShowingBottomSheet status
+                mViewModel.isDetailsShowing = mDialogs.isShowingBottomSheet
+            }
+        }
     }
 
 }

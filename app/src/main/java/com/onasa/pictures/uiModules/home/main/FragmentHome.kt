@@ -85,6 +85,7 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>() {
                 includeEmptyVew{
                     rootEmptyView.isVisible = true
                     lottieAnim.playAnimation()
+                    tvEmptyResponse.text = response.message?:getString(R.string.msg_no_data_found)
                 }
             }
         }

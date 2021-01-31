@@ -17,6 +17,7 @@
     <string name="msg_you_are_offline">You are offline</string>
     <string name="msg_success">Success</string>
     <string name="msg_no_data_loading">Loading Data…</string>
+    <string name="msg_something_went_wrong">Something went wrong!</string>
 
     <!-- Content Description -->
     <string name="cont_desc_picture_item">Picture</string>

@@ -67,10 +67,18 @@ ext.versions = [
         // Logging
         timber                  : '4.7.1',
 
-        // Testing
+        // Unit Testing
         junit                    : '4.13.1',
-        junitExt                 : '1.1.2',
+        mockito                  : '3.3.3',
+        archCoreTesting          : '2.1.0',
+        androidXTestCoreVersion  : '1.3.0',
+        androidXTestExtKotlinRunnerVersion : '1.1.2',
+        robolectricVersion       : '4.5',
+        coroutinesTest           : '1.3.4',
+
+        // Instrumentation Testing
         espressoCore             : '3.3.0',
+        junitExt                 : '1.1.2',
 
 
 ]

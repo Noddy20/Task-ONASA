@@ -43,35 +43,7 @@
                 android:clickable="false"
                 android:focusable="false"
                 >
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:columnCount="2">
-                    <include
-                        android:layout_height="@dimen/itemPictureHeightRv"
-                        android:layout_width="0dp"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="@dimen/_5sdp"
-                        layout="@layout/item_picture_listing_layout"/>
-                    <include
-                        android:layout_height="@dimen/itemPictureHeightRv"
-                        android:layout_width="0dp"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="@dimen/_5sdp"
-                        layout="@layout/item_picture_listing_layout"/>
-                    <include
-                        android:layout_height="@dimen/itemPictureHeightRv"
-                        android:layout_width="0dp"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="@dimen/_5sdp"
-                        layout="@layout/item_picture_listing_layout"/>
-                    <include
-                        android:layout_height="@dimen/itemPictureHeightRv"
-                        android:layout_width="0dp"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="@dimen/_5sdp"
-                        layout="@layout/item_picture_listing_layout"/>
-                </GridLayout>
+                <include layout="@layout/shimmer_home_pictures_layout"/>
             </com.facebook.shimmer.ShimmerFrameLayout>
         </RelativeLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

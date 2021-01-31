@@ -12,7 +12,7 @@ import dagger.hilt.android.scopes.FragmentScoped
 
 @Module
 @InstallIn(FragmentComponent::class)
-object FragmentModules {
+object FragmentModule {
 
     @Provides
     @FragmentScoped

@@ -9,6 +9,7 @@ import androidx.annotation.LayoutRes
 import androidx.annotation.StyleRes
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LifecycleCoroutineScope
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.onasa.pictures.R
 import com.onasa.pictures.databinding.DialogBottomsheetPictureDetailsLayoutBinding
