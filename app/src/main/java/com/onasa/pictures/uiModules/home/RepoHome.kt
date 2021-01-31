@@ -22,7 +22,7 @@ class RepoHome @Inject constructor(private val mAppContext: Context) {
                 //emit loading status
                 emit(BaseResponse.loading<List<ModelPicture>?>(mAppContext.getString(R.string.msg_no_data_loading)))
                 if (modelsJsonStr.isNullOrBlank()) delay(2000)     //delay to show loading UI
-                modelsJsonStr?:mAppContext.assets.open(fileName).bufferedReader().readText().let { jsonStr ->
+                modelsJsonStr?:getAssetsToJson(fileName).let { jsonStr ->
                     //Parse Json to models list
                     val list = parsePicturesJson(jsonStr)
                     Timber.d("getModelsFromAssets List -> $list")
@@ -40,6 +40,10 @@ class RepoHome @Inject constructor(private val mAppContext: Context) {
             }
         }
 
+
+    private fun getAssetsToJson(fileName: String): String{
+        return mAppContext.assets.open(fileName).bufferedReader().readText()
+    }
 
     fun parsePicturesJson(jsonStr: String): List<ModelPicture>?{
         kotlin.runCatching {

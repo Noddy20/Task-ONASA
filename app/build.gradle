@@ -67,6 +67,13 @@ android {
         abortOnError false
     }
 
+    testOptions {
+        unitTests{
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+
 }
 
 dependencies {
@@ -173,4 +180,9 @@ dependencies {
     // Instrumentation Testing
     androidTestImplementation "androidx.test.ext:junit:$versions.junitExt"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCore"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$versions.espressoCore"
+    androidTestImplementation "androidx.test:runner:$versions.supportTestRunner"
+    androidTestImplementation "androidx.test:rules:$versions.supportTestRules"
+
+
 }

@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -63,7 +64,7 @@ class FragmentPictureDetail : BaseFragment<FragmentPictureDetailBinding>() {
                 tvPictureCount.text = "${vpPictures.currentItem + 1}/${modelsList?.size}"
                 mAdapter.submitList(modelsList)
                 vpPictures.post {
-                    vpPictures.currentItem = args.currPos
+                    vpPictures.setCurrentItem(args.currPos, false)
                 }
             }
 
