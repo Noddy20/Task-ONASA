@@ -2,7 +2,8 @@
 
 This repository contains a project with functionality of Picture listing (gallery) and Picture details screen using Kotlin, MVVM, Coroutines, Dagger2 & hilt with unit testing and espresso testing samples.
 
-<img src="https://raw.githubusercontent.com/Noddy20/Task-ONASA/master/assets/screen.gif" />
+
+![Alt text](https://github.com/Noddy20/Task-ONASA/blob/master/assets/screen.gif)
 
 
 ## Structure by packages
