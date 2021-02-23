@@ -21,5 +21,7 @@
 
     <!-- Content Description -->
     <string name="cont_desc_picture_item">Picture</string>
+    <string name="title_bookmarks">Bookmarks</string>
+    <string name="cont_desc_bookmark_button">Bookmark button</string>
 
 </resources>

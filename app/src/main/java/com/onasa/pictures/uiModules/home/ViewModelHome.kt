@@ -29,6 +29,15 @@ class ViewModelHome @ViewModelInject constructor(
         private const val JSON_DATA_FILE_NAME = "data.json"
     }
 
+    //Store the bookmarks
+    private val bookmarksList = arrayListOf<String>()
+
+    fun updateBookmarks(url: String){
+        if (url.isBlank()) return
+        if (bookmarksList.contains(url)) bookmarksList.remove(url)
+        else bookmarksList.add(url)
+    }
+
     //To save and restore Picture Details Dialog
     var isDetailsShowing by savedStateHandle.getData(false)
 

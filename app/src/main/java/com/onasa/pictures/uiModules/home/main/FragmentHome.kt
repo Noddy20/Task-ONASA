@@ -36,11 +36,16 @@ class FragmentHome : BaseFragment<FragmentHomeBinding>() {
         mDataBinding{
 
             rvHomePictures.adapter = mAdapter
-            mAdapter.itemClickListener = { model, pos ->
-                findNavController().navigate(R.id.navActionHomeToDetail, bundleOf(
-                    FragmentPictureDetail.EXTRA_KEY_MODEL_PICTURE to model,
-                    FragmentPictureDetail.EXTRA_KEY_CURRENT_PICTURE_POSITION to pos
-                ))
+            mAdapter.itemClickListener = { model, bookmark, pos ->
+                if (bookmark) {
+                    mViewModel.updateBookmarks(model.url?:"")
+                }else{
+                    findNavController().navigate(
+                        R.id.navActionHomeToDetail, bundleOf(
+                            FragmentPictureDetail.EXTRA_KEY_MODEL_PICTURE to model,
+                            FragmentPictureDetail.EXTRA_KEY_CURRENT_PICTURE_POSITION to pos
+                        ))
+                }
             }
 
             swipeRefreshLayout.setOnRefreshListener {

@@ -7,6 +7,7 @@ import androidx.annotation.Keep
 import android.os.Parcelable
 import com.onasa.pictures.models.BaseItemDiffCallback
 import com.onasa.pictures.models.BaseModel
+import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
 @Keep
@@ -22,6 +23,9 @@ data class ModelPicture(
     @SerialName("title") val title: String? = null,
     @SerialName("url") val url: String? = null
 ) : Parcelable, BaseModel {
+
+    @IgnoredOnParcel
+    var isBookmarked = false
 
     companion object{
 

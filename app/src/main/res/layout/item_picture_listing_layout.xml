@@ -30,5 +30,14 @@
             tools:srcCompat="@drawable/placeholder"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Picture.Corner"
             />
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            app:srcCompat="@drawable/ic_bookmark"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:contentDescription="@string/cont_desc_bookmark_button"
+            android:id="@+id/btnBookmark"
+            />
     </com.google.android.material.card.MaterialCardView>
 </layout>
